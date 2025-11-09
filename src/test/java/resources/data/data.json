@@ -12,5 +12,9 @@
   "accounts": {
     "ValidUserId": 14987,
     "InvalidUserId": 999999999
+  },
+  "transfer": {
+    "fromAccountId": 12345,
+    "toAccountId": 67890
   }
 }
