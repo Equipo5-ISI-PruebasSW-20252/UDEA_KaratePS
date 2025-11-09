@@ -1,29 +1,33 @@
 @parabank_login
-Feature: Login to Parabank
+Feature: Validar servicio de login con token de autenticación
+
+  Como tester de backend,
+  Quiero validar que el servicio de login devuelve un token/autenticación válida,
+  Para permitir acceso a usuarios correctos.
 
   Background:
     * url baseUrl
     * header Accept = 'application/json'
+    * path 'login'
+    * def loginData = data.login
 
-  Scenario: Customer Login
-    Given path 'login'
-    And path 'john' //userName
-    And path 'demo' //password
+  @happy_path
+  Scenario: Login con credenciales validas
+    * def user = loginData.validUser
+    Given param username = user.username
+    And param password = user.password
     When method GET
     Then status 200
-    And match response ==
-    """
-    {
-       "id": '#number',
-       "firstName": '#string',
-       "lastName": '#string',
-       "address": {
-            "street": '#string',
-            "city": '#string',
-            "state": '#string',
-            "zipCode": '#string'
-        },
-       "phoneNumber": '#string',
-       "ssn": '#string'
-    }
-    """
+    And match response.id == '#number'
+    And match response.firstname == '#string'
+    * def token = responseHeaders['CF-RAY'][0]
+    And match token != null
+  
+  @alternative_path
+  Scenario: Login inválido
+    * def user = loginData.invalidUser
+    Given param username = user.username
+    And param password = user.password
+    When method GET
+    Then status 400
+    And match response == 'Invalid username and/or password'
