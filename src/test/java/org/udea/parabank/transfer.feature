@@ -58,7 +58,7 @@ Feature: Transferencia entre cuentas
 
   @alternative_path
   Scenario: Transferencia invalida por cuentas inexistentes
-    * def invalidFromAccount = 8888888888
+    * def invalidFromAccount = 888888888
     * def invalidToAccount = 999999999
 
     Given path 'transfer'
