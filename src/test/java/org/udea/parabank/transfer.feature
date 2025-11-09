@@ -26,11 +26,11 @@ Feature: Transferencia entre cuentas
     Then status 200
     * def toInitial = response.balance
 
-    #Hacer la transferencia
-    Given path 'transfer'
-    And param fromAccountId: fromAccountId
-    And param toAccountId: toAccountId
-    And param amount: amount
+  #Hacer la transferencia
+  Given path 'transfer'
+  And param fromAccountId = fromAccountId
+  And param toAccountId = toAccountId
+  And param amount = amount
     When method POST
     Then status 200
     And match response == """Successfully transferred #{amount} from account ##{fromAccountId} to account ##{toAccountId}"""
@@ -56,10 +56,10 @@ Feature: Transferencia entre cuentas
     * def invalidFromAccount = 888888888
     * def invalidToAccount = 999999999
 
-    Given path 'transfer'
-    And param fromAccountId: invalidFromAccount
-    And param toAccountId: invalidToAccount
-    And param amount: amount
+  Given path 'transfer'
+  And param fromAccountId = invalidFromAccount
+  And param toAccountId = invalidToAccount
+  And param amount = amount
 
     When method POST
     Then status 400
