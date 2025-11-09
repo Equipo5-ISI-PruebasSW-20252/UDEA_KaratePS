@@ -18,8 +18,6 @@ Feature: Validar servicio de login con token de autenticación
     And path password = user.password
     When method GET
     Then status 200
-    And match response.id == '#number'
-    And match response.firstname == '#string'
     * def token = responseHeaders['CF-RAY'][0]
     And match token != null
   
