@@ -11,7 +11,7 @@ Feature: Pago fallido por saldo insuficiente
     * def fromAccountId = data.billpay.sourceAccountId
 
   @happy_path
-  Sceneraio: Pago exitoso
+  Scenario: Pago exitoso
     Given path 'billpay'
     And param accountId = fromAccountId
     And param amount = 1
