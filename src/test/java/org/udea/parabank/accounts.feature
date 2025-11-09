@@ -26,7 +26,7 @@ Feature: Consulta de cuentas
       balance: '#number'
     }
     """
-    And match each response.customerId == userId
+    And match each response[*].customerId == userId
 
   @alternative_path
   Scenario: Intentar obtener cuentas de un usuario inválido
