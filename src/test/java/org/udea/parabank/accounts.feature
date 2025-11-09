@@ -27,6 +27,7 @@ Feature: Consulta de cuentas
     }
     """
     And match each response[*].customerId == userId
+    And match response[*].type contains any ["CHECKING", "SAVINGS"]
 
   @alternative_path
   Scenario: Intentar obtener cuentas de un usuario inválido
