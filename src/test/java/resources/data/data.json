@@ -8,5 +8,9 @@
       "username": "InvUser",
       "password": "badpass"
     }
+  },
+  "accounts": {
+    "ValidUserId": 14987,
+    "InvalidUserId": 999999999
   }
 }
