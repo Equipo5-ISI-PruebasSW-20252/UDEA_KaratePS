@@ -16,7 +16,7 @@ function fn() {
   config.faker = Java.type("com.github.javafaker.Faker");
 
   // configuracion global para acceder a la data en el archivo data.json
-  config.data = karate.read("classpath:data.json");
+  config.data = karate.read("classpath:resources/data/data.json");
 
   return config;
 }
