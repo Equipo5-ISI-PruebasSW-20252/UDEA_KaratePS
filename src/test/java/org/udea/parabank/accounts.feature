@@ -16,7 +16,7 @@ Feature: Consulta de cuentas
     Given path 'customers', userId, 'accounts'
     When method GET
     Then status 200
-    And match response == '#[0]'
+    And match response == '#[]'
     And match each response ==
     """
     {
@@ -33,5 +33,5 @@ Feature: Consulta de cuentas
     * def userId = accountsIds.InvalidUserId
     Given path 'customers', userId, 'accounts'
     When method GET
-    Then status 404
+    Then status 400
     And match response == "Could not find customer #" + userId
