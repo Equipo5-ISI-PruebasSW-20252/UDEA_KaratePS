@@ -28,17 +28,12 @@ Feature: Transferencia entre cuentas
 
     #Hacer la transferencia
     Given path 'transfer'
-    And request
-    """
-    {
-      fromAccountId: #(fromAccountId),
-      toAccountId: #(toAccountId),
-      amount: #(amount)
-    }
-    """
+    And param fromAccountId: fromAccountId
+    And param toAccountId: toAccountId
+    And param amount: amount
     When method POST
     Then status 200
-    And match response == """Successfully transferred $#{amount} from account ##{fromAccountId} to account ##{toAccountId}"""
+    And match response == """Successfully transferred #{amount} from account ##{fromAccountId} to account ##{toAccountId}"""
 
 
     # Verificar saldos actualizados
@@ -62,14 +57,10 @@ Feature: Transferencia entre cuentas
     * def invalidToAccount = 999999999
 
     Given path 'transfer'
-    And request
-    """
-    {
-      fromAccountId: #(invalidFromAccount),
-      toAccountId: #(invalidToAccount),
-      amount: #(amount)
-    }
-    """
+    And param fromAccountId: invalidFromAccount
+    And param toAccountId: invalidToAccount
+    And param amount: amount
+
     When method POST
     Then status 400
-    And match response == """Could not find account number ##{invalidFromAccount} and/or {invalidToAccount}"""
+    And match response == """Could not find account number ##{invalidFromAccount} and/or ##{invalidToAccount}"""
