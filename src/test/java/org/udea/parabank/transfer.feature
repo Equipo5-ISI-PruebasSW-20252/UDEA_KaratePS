@@ -33,7 +33,7 @@ Feature: Transferencia entre cuentas
   And param amount = amount
     When method POST
     Then status 200
-    And match response == """Successfully transferred #{amount} from account ##{fromAccountId} to account ##{toAccountId}"""
+    And match response == "Successfully transferred $" + amount + " from account #" + fromAccountId + " to account #" + toAccountId
 
 
     # Verificar saldos actualizados
@@ -48,6 +48,9 @@ Feature: Transferencia entre cuentas
     * def toFinal = response.balance
 
     # Validar matemáticamente el nuevo saldo
+    * print 'Saldo inicial origen:', fromInitial, 'Saldo final:', fromFinal, 'Monto:', amount
+    * print 'Saldo inicial destino:', toInitial, 'Saldo final:', toFinal, 'Monto:', amount
+
     And assert fromFinal == fromInitial - amount
     And assert toFinal == toInitial + amount
 
@@ -63,4 +66,5 @@ Feature: Transferencia entre cuentas
 
     When method POST
     Then status 400
-    And match response == """Could not find account number ##{invalidFromAccount} and/or ##{invalidToAccount}"""
+    And match response == "Could not find account number " + invalidFromAccount + " and/or " + invalidToAccount
+
