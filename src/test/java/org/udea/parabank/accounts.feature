@@ -8,31 +8,30 @@ Feature: Consulta de cuentas
   Background:
     * url baseUrl
     * header Accept = 'application/json'
-    * def accountsIds = data.parabank_accounts_check
+    * def accountsIds = data.accounts
 
   @happy_path
-  Scenario: obtener las cuentas de un usuario valido
+  Scenario: Obtener las cuentas de un usuario válido
     * def userId = accountsIds.ValidUserId
     Given path 'customers', userId, 'accounts'
     When method GET
     Then status 200
     And match response == '#[0]'
     And match each response ==
-        {
-            id: '#number',
-            customerId: '#number',
-            type: '#string',
-            balance: '#number'
-        }
+    """
+    {
+      id: '#number',
+      customerId: '#number',
+      type: '#string',
+      balance: '#number'
+    }
+    """
     And match each response.customerId == userId
 
   @alternative_path
-  Scenario: Intentar obtener cuentas de un usuario invalido
+  Scenario: Intentar obtener cuentas de un usuario inválido
     * def userId = accountsIds.InvalidUserId
     Given path 'customers', userId, 'accounts'
     When method GET
-    Then status 400
+    Then status 404
     And match response == "Could not find customer #" + userId
-
-
-    
