@@ -25,9 +25,16 @@ class TestRunner {
     //             .outputCucumberJson(true);
     // }
 
+    // @Karate.Test
+    // Karate test04_ParabankBillPay() {
+    //     return Karate.run("billpay")
+    //             .relativeTo(getClass())
+    //             .outputCucumberJson(true);
+    // }
+
     @Karate.Test
-    Karate test04_ParabankBillPay() {
-        return Karate.run("billpay")
+    Karate test05_ParabankLoan() {
+        return Karate.run("loan")
                 .relativeTo(getClass())
                 .outputCucumberJson(true);
     }
