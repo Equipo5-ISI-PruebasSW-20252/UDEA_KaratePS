@@ -28,8 +28,7 @@ Feature: Simulación de préstamo
       responseDate: '#number',
       loanProviderName: '#string',
       approved: '#boolean',
-      accountId: '#number',
-      newAccountId: '#number'
+      accountId: '#number'
     }
     """
     * def loanStatus = response.approved
