@@ -32,7 +32,7 @@ Feature: Simulación de préstamo
     }
     """
     * def loanStatus = response.approved
-    * def newAccountId = response.newAccountId
+    * def newAccountId = response.accountId
     And assert loanStatus == true
 
     # Validar que la nueva cuenta sea de tipo loan
