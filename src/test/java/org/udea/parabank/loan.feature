@@ -25,7 +25,7 @@ Feature: Simulación de préstamo
     And match response ==
     """
     {
-      responseDate: '#string',
+      responseDate: '#number',
       loanProviderName: '#string',
       approved: '#boolean',
       accountId: '#number',
@@ -52,5 +52,6 @@ Feature: Simulación de préstamo
     And param fromAccountId = accountId
     When method POST
     Then status 200
-    And match response contains 'insufficient'
+    And match response.message contains 'insufficient'
+
 
