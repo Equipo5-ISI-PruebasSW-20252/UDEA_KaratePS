@@ -21,7 +21,9 @@
     "sourceAccountId": 13677
   },
   "loan": {
-    "customerId": 12545,
-    "accountId": 13677
+    "customerId": 14099,
+    "accountId": 17451,
+    "validAmount": 20,
+    "invalidAmount": 2000000
   }
 }
