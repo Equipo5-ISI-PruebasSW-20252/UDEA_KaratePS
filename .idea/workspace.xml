@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d3bcbe7d-b70c-429f-a60e-bf847250cb4b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/target/test-classes/karate-config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/logback-test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/udea/parabank/accounts.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/udea/parabank/billpay.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/udea/parabank/loan.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/udea/parabank/login.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/org/udea/parabank/transfer.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/data/data.json" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="35IUEAWEV2flPFG6AivdCAkuKj2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/juana/OneDrive/Documentos/UDEA_KaratePS&quot;
+  }
+}</component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d3bcbe7d-b70c-429f-a60e-bf847250cb4b" name="Changes" comment="" />
+      <created>1762796965367</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762796965367</updated>
+    </task>
+    <servers />
+  </component>
+</project>
