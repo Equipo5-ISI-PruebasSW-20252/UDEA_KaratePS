@@ -32,7 +32,8 @@ Feature: Transferencia entre cuentas
     And param toAccountId = toAccountId
     And param amount = amount
     * def JavaString = Java.type('java.lang.String')
-    * def amountFormatted = JavaString.format('%.1f', amount)
+    * def JavaDouble = Java.type('java.lang.Double')
+    * def amountFormatted = JavaString.format('%.1f', JavaDouble.valueOf(amount))
     When method POST
     Then status 200
     And match response == "Successfully transferred $" + amountFormatted + " from account #" + fromAccountId + " to account #" + toAccountId
